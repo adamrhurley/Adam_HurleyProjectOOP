@@ -1,4 +1,123 @@
 public class newPhone {
+    private String name;
+    private String dimensions;
+    private double weight;
+    private String displayType;
+    private double displaySize;
+    private String Resolution;
+    private String multitouch;
+    private String os;
+    private String cpu;
+    private String fingerprint;
 
-    Phone onePlus6 = new Phone("155.7 x 75.4 x 7.8 mm",177,"Optic AMOLED capacitive touchscreen",6.28,"1080 x 2280 pixels","Yes","Android 9.0 (Pie)","Qualcomm Snapdragon 845 Octa-core (4x2.8 GHz Kryo 385 Gold & 4x1.7 GHz Kryo 385 Silver)","asda");
+
+    public newPhone(){
+    this("Unknown","Unknown",0,"Unknown",0,"Unknown","Unknown","Unknown","Unknown","Unknown");
+    }
+
+
+    public newPhone(String name,String dimensions, double weight, String displayType, double displaySize, String resolution, String multitouch, String os, String cpu, String fingerprint) {
+        this.name = name;
+        this.dimensions = dimensions;
+        this.weight = weight;
+        this.displayType = displayType;
+        this.displaySize = displaySize;
+        Resolution = resolution;
+        this.multitouch = multitouch;
+        this.os = os;
+        this.cpu = cpu;
+        this.fingerprint = fingerprint;
+    }
+
+    public String getName() {return name;}
+
+    public void setName(String name) {this.name = name;}
+
+    public String getDimensions() {
+        return dimensions;
+    }
+
+    public void setDimensions(String dimensions) {
+        this.dimensions = dimensions;
+    }
+
+    public double getWeight() {
+        return weight;
+    }
+
+    public void setWeight(double weight) {
+        this.weight = weight;
+    }
+
+    public String getDisplayType() {
+        return displayType;
+    }
+
+    public void setDisplayType(String displayType) {
+        this.displayType = displayType;
+    }
+
+    public double getDisplaySize() {
+        return displaySize;
+    }
+
+    public void setDisplaySize(double displaySize) {
+        this.displaySize = displaySize;
+    }
+
+    public String getResolution() {
+        return Resolution;
+    }
+
+    public void setResolution(String resolution) {
+        Resolution = resolution;
+    }
+
+    public String getMultitouch() {
+        return multitouch;
+    }
+
+    public void setMultitouch(String multitouch) {
+        this.multitouch = multitouch;
+    }
+
+    public String getOs() {
+        return os;
+    }
+
+    public void setOs(String os) {
+        this.os = os;
+    }
+
+    public String getCpu() {
+        return cpu;
+    }
+
+    public void setCpu(String cpu) {
+        this.cpu = cpu;
+    }
+
+    public String getFingerprint() {
+        return fingerprint;
+    }
+
+    public void setFingerprint(String fingerprint) {
+        this.fingerprint = fingerprint;
+    }
+
+    @Override
+    public String toString() {
+        return "Phone{" +
+                "name='" + name + '\'' +
+                "dimensions='" + dimensions + '\'' +
+                ", weight=" + weight +
+                ", displayType='" + displayType + '\'' +
+                ", displaySize='" + displaySize + '\'' +
+                ", Resolution='" + Resolution + '\'' +
+                ", multitouch='" + multitouch + '\'' +
+                ", os='" + os + '\'' +
+                ", cpu='" + cpu + '\'' +
+                ", fingerprint='" + fingerprint + '\'' +
+                '}';
+    }
 }

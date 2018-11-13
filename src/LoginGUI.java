@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.event.*;
 import java.awt.*;
 
-public class PhoneGUI extends JFrame implements ActionListener{
+public class LoginGUI extends JFrame implements ActionListener{
     JTextField usernameField;
     JPasswordField passwordField;
     JButton LoginButton;
@@ -12,7 +12,7 @@ public class PhoneGUI extends JFrame implements ActionListener{
 
 
 
-    public PhoneGUI()
+    public LoginGUI()
     {
         //login = new JFrame("Authentication");
 
@@ -88,8 +88,8 @@ public class PhoneGUI extends JFrame implements ActionListener{
 
 
 
-    }/*
-    public PhoneGUI2() {
+    }
+   /* public PhoneGUI2() {
         // home = new JFrame("Home");
 
         FlowLayout HomeLayout = new FlowLayout();
@@ -134,15 +134,18 @@ public class PhoneGUI extends JFrame implements ActionListener{
 
             if(e.getSource() == passwordField)
             {
-                    JOptionPane.showMessageDialog(null,"Welcome to the system " +
-                                    usernameField.getText(),"Authenticated",
-                            JOptionPane.INFORMATION_MESSAGE);
+                setVisible(false);
+                HomeGUI phonegui = new HomeGUI();
+                phonegui.setVisible(true);
 
             }
             if(e.getSource() == LoginButton)
             {
                 setVisible(false);
-               //   PhoneGUI2();
+                HomeGUI phonegui = new HomeGUI();
+                phonegui.setVisible(true);
+
+
             }
 
         }
