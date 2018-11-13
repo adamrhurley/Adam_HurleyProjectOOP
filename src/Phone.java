@@ -2,7 +2,7 @@ public class Phone {
     private String dimensions;
     private double weight;
     private String displayType;
-    private String displaySize;
+    private double displaySize;
     private String Resolution;
     private String multitouch;
     private String os;
@@ -12,11 +12,11 @@ public class Phone {
 
 
     public Phone(){
-    this("Unknown",0,"Unknown","Unknown","Unknown","Unknown","Unknown","Unknown","Unknown");
+    this("Unknown",0,"Unknown",0,"Unknown","Unknown","Unknown","Unknown","Unknown");
     }
 
 
-    public Phone(String dimensions, double weight, String displayType, String displaySize, String resolution, String multitouch, String os, String cpu, String fingerprint) {
+    public Phone(String dimensions, double weight, String displayType, double displaySize, String resolution, String multitouch, String os, String cpu, String fingerprint) {
         this.dimensions = dimensions;
         this.weight = weight;
         this.displayType = displayType;
@@ -52,11 +52,11 @@ public class Phone {
         this.displayType = displayType;
     }
 
-    public String getDisplaySize() {
+    public double getDisplaySize() {
         return displaySize;
     }
 
-    public void setDisplaySize(String displaySize) {
+    public void setDisplaySize(double displaySize) {
         this.displaySize = displaySize;
     }
 

@@ -2,58 +2,59 @@ import javax.swing.*;
 import java.awt.event.*;
 import java.awt.*;
 
-public class PhoneGUI{
+public class PhoneGUI extends JFrame implements ActionListener{
     JTextField usernameField;
     JPasswordField passwordField;
     JButton LoginButton;
-    JFrame home;
-    JFrame login;
+    //JButton buyButton;
+   // JButton searchButton;
+   //JButton compareButton;
+
+
 
     public PhoneGUI()
     {
-        login = new JFrame("Authentication");
+        //login = new JFrame("Authentication");
 
         FlowLayout LoginLayout = new FlowLayout();
 
-        login.setLayout(LoginLayout);
+        setLayout(LoginLayout);
 
-        login.setSize(400,100);
+        setSize(400,100);
 
-        login.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         JLabel usernameLabel = new JLabel("Username:");
 
-        login.add(usernameLabel);
+        add(usernameLabel);
 
         usernameField = new JTextField(10);
 
-        login.add(usernameField);
+        add(usernameField);
 
         JLabel passwordLabel = new JLabel("Password:");
 
-        login.add(passwordLabel);
+        add(passwordLabel);
 
         passwordField = new JPasswordField(10);
 
-        login.add(passwordField);
+        add(passwordField);
 
         LoginButton = new JButton("Login");
 
-        login.add(LoginButton);
+        add(LoginButton);
 
-        TextFieldEventHandler loginHandler = new TextFieldEventHandler();
+        this.usernameField.addActionListener(this);
+        this.passwordField.addActionListener(this);
+        this.LoginButton.addActionListener(this);
 
-        ButtonEventHandler loginButtonHandler = new  ButtonEventHandler();
 
-        usernameField.addActionListener(loginHandler);
-        passwordField.addActionListener(loginHandler);
-        LoginButton.addActionListener(loginButtonHandler);
 
-        login.setVisible(true);
+        setVisible(true);
 
         //////////////////////////////////////////////////////////////////////////////////
 
-        home = new JFrame("Home");
+       /* home = new JFrame("Home");
 
         FlowLayout HomeLayout = new FlowLayout();
 
@@ -75,19 +76,52 @@ public class PhoneGUI{
 
         home.add(compareButton);
 
-        ButtonEventHandler homeHandler = new  ButtonEventHandler();
+        //ButtonEventHandler homeHandler = new  ButtonEventHandler();
+
+        this.buyButton.addActionListener(this);
+        this.searchButton.addActionListener(this);
+        this.compareButton.addActionListener(this);
+        //buyButton.addActionListener(homeHandler);
+        //searchButton.addActionListener(homeHandler);
+        //compareButton.addActionListener(homeHandler);
+*/
 
 
-        buyButton.addActionListener(homeHandler);
-        searchButton.addActionListener(homeHandler);
-        compareButton.addActionListener(homeHandler);
+
+    }/*
+    public PhoneGUI2() {
+        // home = new JFrame("Home");
+
+        FlowLayout HomeLayout = new FlowLayout();
+
+        setLayout(HomeLayout);
+
+        setSize(400, 100);
+
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        JButton buyButton = new JButton("Buy");
+
+        add(buyButton);
+
+        JButton searchButton = new JButton("Search");
+
+        add(searchButton);
+
+        JButton compareButton = new JButton("Compare");
+
+        add(compareButton);
+
+        //ButtonEventHandler homeHandler = new  ButtonEventHandler();
+
+        this.buyButton.addActionListener(this);
+        this.searchButton.addActionListener(this);
+        this.compareButton.addActionListener(this);
 
 
+    }*/
 
 
-    }
-
-    private class TextFieldEventHandler implements ActionListener{
 
         public void actionPerformed(ActionEvent e)
         {
@@ -98,34 +132,19 @@ public class PhoneGUI{
                 passwordField.requestFocus();
             }
 
-          /*  if(e.getSource() == passwordField)
+            if(e.getSource() == passwordField)
             {
                     JOptionPane.showMessageDialog(null,"Welcome to the system " +
                                     usernameField.getText(),"Authenticated",
                             JOptionPane.INFORMATION_MESSAGE);
 
-            }*/
-
-        }
-    }
-
-    private class ButtonEventHandler implements ActionListener{
-
-        public void actionPerformed(ActionEvent e)
-        {
+            }
             if(e.getSource() == LoginButton)
             {
-                login.setVisible(false);
-                home.setVisible(true);
+                setVisible(false);
+               //   PhoneGUI2();
             }
 
         }
     }
-
-}
-
-
-
-
-
 
