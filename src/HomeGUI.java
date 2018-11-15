@@ -3,11 +3,17 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class HomeGUI extends JFrame implements ActionListener {
+public class HomeGUI extends JFrame {//implements ActionListener {
 
     JButton buyButton;
-     JButton searchButton;
+    JButton searchButton;
     JButton compareButton;
+
+    public static void main(String[] args) {
+        HomeGUI homegui = new HomeGUI();
+        homegui.setVisible(true);
+    }
+
     public HomeGUI() {
         FlowLayout HomeLayout = new FlowLayout();
 
@@ -32,18 +38,31 @@ public class HomeGUI extends JFrame implements ActionListener {
         setVisible(true);
 
 
-  //      this.buyButton.addActionListener(this);
-   //     this.searchButton.addActionListener(this);
-     //   this.compareButton.addActionListener(this);
+        buyButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+
+
+                setVisible(false);
+                BuyGUI buygui = new BuyGUI();
+                buygui.setVisible(true);
+            }
+        }); // end actionPerformed
+
+        //this.searchButton.addActionListener(this);
+        //this.compareButton.addActionListener(this);
 
 
     }
-    public void actionPerformed(ActionEvent e)
+}
+    /*public void actionPerformed(ActionEvent e)
     {
 
-       /* if(e.getSource() == buyButton)
+        if(e.getSource() == buyButton)
         {
-
+           System.out.println("in buyButton");
+           // setVisible(false);
+            BuyGUI buygui = new BuyGUI();
+            buygui.setVisible(true);
         }
 
         if(e.getSource() == searchButton)
@@ -54,7 +73,7 @@ public class HomeGUI extends JFrame implements ActionListener {
         if(e.getSource() == compareButton)
         {
 
-        }*/
+        }
 
     }
-}
+}*/

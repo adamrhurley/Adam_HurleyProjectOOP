@@ -8,54 +8,33 @@ import java.awt.event.ActionListener;
         JButton buyButton;
         JButton searchButton;
         JButton compareButton;
+        String[] itemString = {"OnePlus 6","Samsung Galaxy Note 9","Huawei Mate 20 Pro","iPhone XS Max", "Google Pixel 3 XL"};
+        JComboBox itemList = new JComboBox(itemString);   //https://www.youtube.com/watch?v=iOV_oaJhABQ
 
+        public static void main(String[] args) {
+            BuyGUI buygui = new BuyGUI();
+            buygui.setVisible(true);
+        }
         public BuyGUI() {
-            FlowLayout HomeLayout = new FlowLayout();
+            FlowLayout BuyLayout = new FlowLayout();
 
-            setLayout(HomeLayout);
+            setLayout(BuyLayout);
 
-            setSize(500, 200);
+            setSize(500, 400);
 
             setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-            JButton buyButton = new JButton("Buy");
+            itemList.setSelectedIndex(1);
 
-            add(buyButton);
+            itemList.addActionListener(this);
 
-            JButton searchButton = new JButton("Search");
-
-            add(searchButton);
-
-            JButton compareButton = new JButton("Compare");
-
-            add(compareButton);
+            add(itemList);
 
             setVisible(true);
-
-
-            //      this.buyButton.addActionListener(this);
-            //     this.searchButton.addActionListener(this);
-            //   this.compareButton.addActionListener(this);
-
 
         }
         public void actionPerformed(ActionEvent e)
         {
-
-       /* if(e.getSource() == buyButton)
-        {
-
-        }
-
-        if(e.getSource() == searchButton)
-        {
-
-        }
-
-        if(e.getSource() == compareButton)
-        {
-
-        }*/
 
         }
     }
