@@ -6,16 +6,9 @@ public class LoginGUI extends JFrame implements ActionListener{
     JTextField usernameField;
     JPasswordField passwordField;
     JButton LoginButton;
-    //JButton buyButton;
-   // JButton searchButton;
-   //JButton compareButton;
-
-
 
     public LoginGUI()
     {
-        //login = new JFrame("Authentication");
-
         FlowLayout LoginLayout = new FlowLayout();
 
         setLayout(LoginLayout);
@@ -51,78 +44,7 @@ public class LoginGUI extends JFrame implements ActionListener{
 
 
         setVisible(true);
-
-        //////////////////////////////////////////////////////////////////////////////////
-
-       /* home = new JFrame("Home");
-
-        FlowLayout HomeLayout = new FlowLayout();
-
-        home.setLayout(HomeLayout);
-
-        home.setSize(400,100);
-
-        home.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        JButton buyButton = new JButton("Buy");
-
-        home.add(buyButton);
-
-        JButton searchButton = new JButton("Search");
-
-        home.add(searchButton);
-
-        JButton compareButton = new JButton("Compare");
-
-        home.add(compareButton);
-
-        //ButtonEventHandler homeHandler = new  ButtonEventHandler();
-
-        this.buyButton.addActionListener(this);
-        this.searchButton.addActionListener(this);
-        this.compareButton.addActionListener(this);
-        //buyButton.addActionListener(homeHandler);
-        //searchButton.addActionListener(homeHandler);
-        //compareButton.addActionListener(homeHandler);
-*/
-
-
-
     }
-   /* public PhoneGUI2() {
-        // home = new JFrame("Home");
-
-        FlowLayout HomeLayout = new FlowLayout();
-
-        setLayout(HomeLayout);
-
-        setSize(400, 100);
-
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        JButton buyButton = new JButton("Buy");
-
-        add(buyButton);
-
-        JButton searchButton = new JButton("Search");
-
-        add(searchButton);
-
-        JButton compareButton = new JButton("Compare");
-
-        add(compareButton);
-
-        //ButtonEventHandler homeHandler = new  ButtonEventHandler();
-
-        this.buyButton.addActionListener(this);
-        this.searchButton.addActionListener(this);
-        this.compareButton.addActionListener(this);
-
-
-    }*/
-
-
-
         public void actionPerformed(ActionEvent e)
         {
 

@@ -3,15 +3,17 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-    public class BuyGUI extends JFrame implements ActionListener {
+    public class CompareGUI extends JFrame implements ActionListener {
+
 
         String[] itemString = {"OnePlus 6","Samsung Galaxy Note 9","Huawei Mate 20 Pro","iPhone XS Max", "Google Pixel 3 XL"};
         JComboBox itemList = new JComboBox(itemString);   //https://www.youtube.com/watch?v=iOV_oaJhABQ
+        JComboBox itemList2 = new JComboBox(itemString);
 
-        public BuyGUI() {
-            FlowLayout BuyLayout = new FlowLayout();
+        public CompareGUI() {
+            FlowLayout CompareLayout = new FlowLayout();
 
-            setLayout(BuyLayout);
+            setLayout(CompareLayout);
 
             setSize(500, 400);
 
@@ -22,6 +24,12 @@ import java.awt.event.ActionListener;
             itemList.addActionListener(this);
 
             add(itemList);
+
+            itemList2.setSelectedIndex(1);
+
+            itemList2.addActionListener(this);
+
+            add(itemList2);
 
             setVisible(true);
 

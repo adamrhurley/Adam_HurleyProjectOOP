@@ -9,10 +9,6 @@ public class HomeGUI extends JFrame {//implements ActionListener {
     JButton searchButton;
     JButton compareButton;
 
-    public static void main(String[] args) {
-        HomeGUI homegui = new HomeGUI();
-        homegui.setVisible(true);
-    }
 
     public HomeGUI() {
         FlowLayout HomeLayout = new FlowLayout();
@@ -40,40 +36,19 @@ public class HomeGUI extends JFrame {//implements ActionListener {
 
         buyButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-
-
                 setVisible(false);
                 BuyGUI buygui = new BuyGUI();
-                buygui.setVisible(true);
+                buygui.setVisible(true);}
             }
-        }); // end actionPerformed
+        );
 
-        //this.searchButton.addActionListener(this);
-        //this.compareButton.addActionListener(this);
-
-
+       compareButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                setVisible(false);
+                CompareGUI comparegui = new CompareGUI();
+                comparegui.setVisible(true);}
+            }
+        );
     }
 }
-    /*public void actionPerformed(ActionEvent e)
-    {
 
-        if(e.getSource() == buyButton)
-        {
-           System.out.println("in buyButton");
-           // setVisible(false);
-            BuyGUI buygui = new BuyGUI();
-            buygui.setVisible(true);
-        }
-
-        if(e.getSource() == searchButton)
-        {
-
-        }
-
-        if(e.getSource() == compareButton)
-        {
-
-        }
-
-    }
-}*/
