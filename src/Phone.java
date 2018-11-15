@@ -1,4 +1,4 @@
-public class Phone {
+public class Phone{
 
     newPhone onePlus6 = new newPhone("OnePlus 6", "155.7 x 75.4 x 7.8 mm", 177, "Optic AMOLED",
             6.28, "1080 x 2280 pixels", "Yes", "Android 9.0 (Pie)",

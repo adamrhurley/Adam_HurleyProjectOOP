@@ -23,8 +23,18 @@ import java.awt.event.ActionListener;
 
             add(itemList);
 
+            JButton buyButton = new JButton("Buy");
+
+            add(buyButton);
+
             setVisible(true);
 
+            buyButton.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                    setVisible(false);
+                    CheckoutGUI checkoutgui = new CheckoutGUI();
+                    checkoutgui.setVisible(true);
+                }});
         }
         public void actionPerformed(ActionEvent e)
         {
