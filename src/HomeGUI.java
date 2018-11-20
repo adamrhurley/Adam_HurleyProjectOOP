@@ -23,9 +23,7 @@ public class HomeGUI extends JFrame {//implements ActionListener {
 
         add(buyButton);
 
-        JButton searchButton = new JButton("Search");
 
-        add(searchButton);
 
         JButton compareButton = new JButton("Compare");
 
