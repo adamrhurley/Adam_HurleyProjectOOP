@@ -15,7 +15,7 @@ public class CheckoutGUI extends JFrame{
         static String summary;
         JTextField nametxt = new JTextField();
         JTextField addresstxt = new JTextField();
-
+    //https://www.youtube.com/watch?v=a0JktV-EJBk
         public CheckoutGUI() {
             setLayout(null);
             setVisible(true);
