@@ -86,7 +86,7 @@ public class CheckoutGUI extends JFrame{
             {
                 String Submit = e.getActionCommand();
                 if(e.getSource() == submit_btn || Submit.equals("Submit"))
-                {
+                //setVisible(false);
                     JOptionPane.showMessageDialog(null,"Order Received");
 
                     name =("");
@@ -103,7 +103,8 @@ public class CheckoutGUI extends JFrame{
                         reader.write(Data);
                         reader.newLine();
                         reader.close();
-                   }catch (IOException E)
+                   }
+                   catch (IOException E)
                    {
                        JOptionPane.showMessageDialog(null,"Error!");
                    }
@@ -113,9 +114,10 @@ public class CheckoutGUI extends JFrame{
 
                 }
 
-            } );
+       );  }
         }
-}
+
+
 
 
 
