@@ -1,10 +1,13 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 public class CompareGUI extends JFrame implements ActionListener {
+        JPanel p = new JPanel();
+        JPanel p2 = new JPanel();
         JTextArea textArea;
         JTextArea textArea1;
         JButton home_btn;
@@ -13,56 +16,55 @@ public class CompareGUI extends JFrame implements ActionListener {
         JComboBox itemList2 = new JComboBox(itemString);
 
         public CompareGUI() {
-            FlowLayout CompareLayout = new FlowLayout();
+            BorderLayout CompareLayout = new BorderLayout();
 
             setLayout(CompareLayout);
 
-            setSize(1000, 1000);
+            setSize(1700, 600);
 
             setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+            p.setPreferredSize(new Dimension(300,50));
+
+            add(p,BorderLayout.NORTH);
+
+            p2.setPreferredSize(new Dimension(300,200));
+
+            add(p2,BorderLayout.CENTER);
 
             itemList.setSelectedIndex(1);
 
             itemList.addActionListener(this);
 
-            add(itemList);
+            p.add(itemList,BorderLayout.NORTH);
 
             itemList2.setSelectedIndex(1);
 
             itemList2.addActionListener(this);
 
-            add(itemList2);
+            p.add(itemList2,BorderLayout.NORTH);
 
             JButton home_btn = new JButton("Home");
+
             home_btn.setBounds(180, 500, 120, 40);
-            add(home_btn);
 
-           // textArea = new JTextArea(5, 20);
-       //     textArea.setEditable(false);
-         //   textArea.setBounds(580, 0, 120, 40);
-          //  JScrollPane scrollPane = new JScrollPane(textArea);
-
+            p.add(home_btn,BorderLayout.NORTH);
 
             setVisible(true);
-            home_btn.addActionListener(new ActionListener() {
-                                           public void actionPerformed(ActionEvent e)
-                                           {
 
-                                               setVisible(false);
-                                               HomeGUI homegui = new HomeGUI();
-                                               homegui.setVisible(true);
-                                           }
-        });
-        }
+            home_btn.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent e)
+                {
+                    setVisible(false);
+                    HomeGUI homegui = new HomeGUI();
+                    homegui.setVisible(true);
+                }
+            }
+        );
+    }
 
         public void actionPerformed(ActionEvent e)
        {
-          // if(e.getSource() == itemList)
-          // {
-            //   int indexSelected = itemList.getSelectedIndex();
-           //    System.out.println(indexSelected);
-               //newPhone np = allPhones.get(indexSelected);
-              // System.out.println(np);
                if(e.getSource() == itemList)
                {
 
@@ -85,17 +87,14 @@ public class CompareGUI extends JFrame implements ActionListener {
                    newPhone.createPhone();
                    ArrayList<newPhone> allPhones = newPhone.getAllPhones();
                    newPhone np = allPhones.get(indexSelected);
-                   //System.out.println(np);
-
 
                      //You can display this information in any way you like e.g. on a text area, nicely formatted
                    textArea = new JTextArea();
-                   textArea.setBounds(900, 0, 120, 100);
-                   textArea.setLocation(0,900);
                    textArea.setEditable(false);
                    JScrollPane scrollPane = new JScrollPane(textArea);
-                   add(textArea);
+                   p2.add(textArea,BorderLayout.CENTER);
                    textArea.append(String.valueOf(np));
+
                    //You could do something similar for the other combo-box and then you'd have maybe 2 text-areas filled with information
                    //about the 2 Phone objects for comparison purposes
                }
@@ -109,17 +108,14 @@ public class CompareGUI extends JFrame implements ActionListener {
                ArrayList<newPhone> allPhones = newPhone.getAllPhones();
                newPhone np = allPhones.get(indexSelected);
 
-
-
-
-               textArea1 = new JTextArea(5, 20);
+               textArea1 = new JTextArea();
                textArea1.setEditable(false);
                JScrollPane scrollPane = new JScrollPane(textArea1);
-               add(textArea1);
+               p2.add(textArea1,BorderLayout.EAST);
                textArea1.append(String.valueOf(np));
            }
        }
-           }
+}
 
 
 

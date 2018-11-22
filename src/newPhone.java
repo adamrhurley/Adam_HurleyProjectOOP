@@ -134,11 +134,11 @@ public class newPhone {
     }
 
     public static void createPhone() {
-        newPhone onePlus6 = new newPhone("OnePlus 6\n", "155.7 x 75.4 x 7.8 mm\n", 177, "\nOptic AMOLED\n",
+        newPhone onePlus6 = new newPhone("OnePlus 6\n", "155.7 x 75.4 x 7.8 mm\n", 177, "Optic AMOLED\n",
                 6.28, "\n1080 x 2280 pixels\n", "Yes\n", "Android 9.0 (Pie)\n",
                 "Qualcomm Snapdragon 845 Octa-core (4x2.8 GHz Kryo 385 Gold & 4x1.7 GHz Kryo 385 Silver)\n", "Yes\n",100);
 
-        newPhone galaxyNote9 = new newPhone("Samsung Galaxy Note9", "161.9 x 76.4 x 8.8 mm", 201,
+        newPhone galaxyNote9 = new newPhone("Samsung Galaxy Note 9\n", "161.9 x 76.4 x 8.8 mm", 201,
                 "Super AMOLED", 6.4, "1440 x 2960 pixels", "Yes", "Android 8.1 (Oreo)",
                 "Qualcomm Snapdragon 845 Octa-core (4x2.8 GHz Kryo 385 Gold & 4x1.7 GHz Kryo 385 Silver)", "Yes", 100);
 
