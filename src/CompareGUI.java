@@ -103,7 +103,6 @@ public class CompareGUI extends JFrame implements ActionListener {
            {
 
                int indexSelected = itemList2.getSelectedIndex();
-               System.out.println(indexSelected);
                newPhone.createPhone();
                ArrayList<newPhone> allPhones = newPhone.getAllPhones();
                newPhone np = allPhones.get(indexSelected);
