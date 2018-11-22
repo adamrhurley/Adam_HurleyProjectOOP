@@ -154,6 +154,12 @@ public class newPhone {
         allPhones.add(iphonexsmax);
         allPhones.add(pixel3xl);
     }
-
+    public static ArrayList<newPhone> getAllPhones()
+    {
+        return allPhones;
     }
+
+}
+
+
 
