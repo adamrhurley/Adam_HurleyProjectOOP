@@ -10,7 +10,16 @@ public class CheckoutGUI extends JFrame{
 
         JButton submit_btn;
         private String name;
+        private String phoneNumber;
         private String address;
+        private String towncity;
+        private String postcode;
+        private String country;
+        private String cardNumber;
+        private String expiryDate;
+        private String cvv;
+
+
         static String summary;
         JTextField nametxt = new JTextField();
         JTextField addresstxt = new JTextField();
@@ -71,6 +80,30 @@ public class CheckoutGUI extends JFrame{
             countrytxt.setBounds(180, 300, 180, 30);
             add(countrytxt);
 
+            JLabel cardNumlbl = new JLabel("Card Number : ");
+            cardNumlbl.setBounds(50, 350, 100, 30);
+            add(cardNumlbl);
+
+            JTextField cardNumtxt = new JTextField();
+            cardNumtxt.setBounds(180, 350, 180, 30);
+            add(cardNumtxt);
+
+            JLabel expirylbl = new JLabel("Expiry Date : ");
+            expirylbl.setBounds(50, 400, 100, 30);
+            add(expirylbl);
+
+            JTextField expirytxt = new JTextField();
+            expirytxt.setBounds(180, 400, 180, 30);
+            add(expirytxt);
+
+            JLabel cvvlbl = new JLabel("CVV : ");
+            cvvlbl.setBounds(50, 450, 100, 30);
+            add(cvvlbl);
+
+            JTextField cvvtxt = new JTextField();
+            cvvtxt.setBounds(180, 450, 180, 30);
+            add(cvvtxt);
+
             JButton submit_btn = new JButton("Submit");
             submit_btn.setBounds(180, 500, 120, 40);
             add(submit_btn);
@@ -89,36 +122,57 @@ public class CheckoutGUI extends JFrame{
                                                        if (!towncitytxt.getText().isEmpty()) {
                                                             if (!postcodetxt.getText().isEmpty()) {
                                                                if (!countrytxt.getText().isEmpty()) {
-                                                                    {
+                                                                   if (!cardNumtxt.getText().isEmpty()) {
+                                                                       if (!expirytxt.getText().isEmpty()) {
+                                                                           if (!cvvtxt.getText().isEmpty()) {
 
 
-                                                                        String Submit = e.getActionCommand();
-                                                                        if (e.getSource() == submit_btn || Submit.equals("Submit"))
+                                                                               String Submit = e.getActionCommand();
+                                                                               if (e.getSource() == submit_btn || Submit.equals("Submit"))
 
 
-                                                                            setVisible(false);
-                                                                        JOptionPane.showMessageDialog(null, "Order Received");
+                                                                                   setVisible(false);
+                                                                               JOptionPane.showMessageDialog(null, "Order Received");
 
-                                                                        name = ("");
-                                                                        address = ("");
+                                                                               name = ("");
+                                                                               phoneNumber = ("");
+                                                                               address = ("");
+                                                                               towncity = ("");
+                                                                               postcode = ("");
+                                                                               country = ("");
+                                                                               cardNumber = ("");
+                                                                               expiryDate = ("");
+                                                                               cvv = ("");
 
-                                                                        name = nametxt.getText().trim();
-                                                                        address = addresstxt.getText().trim();
+                                                                               name = nametxt.getText().trim();
+                                                                               phoneNumber = phonetxt.getText().trim();
+                                                                               address = addresstxt.getText().trim();
+                                                                               towncity = towncitytxt.getText().trim();
+                                                                               postcode = postcodetxt.getText().trim();
+                                                                               country = countrytxt.getText().trim();
+                                                                               cardNumber = cardNumtxt.getText().trim();
+                                                                               expiryDate = expirytxt.getText().trim();
+                                                                               cvv = cvvtxt.getText().trim();
+                                                                               summary = "Customer Details: \n" + "Name: " +  name + "\n" + "Phone Number: " + phoneNumber + "\n" + "Address: " + address + "\n" + "Town/City: " + towncity + "\n" + "Postcode: " + postcode + "\n" + "Country: " + country + "\n" + "Card Number: " + cardNumber + "\n" + "Expiry Date: " + expiryDate + "\n" + "CVV: " + cvv ;
 
-                                                                        summary = ("Customer Details: \n" + name) + ("\n" + address);
+                                                                               String Data = CheckoutGUI.summary;
+                                                                               try {
+                                                                                   BufferedWriter reader = new BufferedWriter(new FileWriter(new File("C:\\Users\\t00198396\\Desktop\\OOP\\src\\checkout.txt"), true));
+                                                                                   reader.write(Data);
+                                                                                   reader.newLine();
+                                                                                   reader.close();
+                                                                               } catch (Exception E) {
+                                                                                   JOptionPane.showMessageDialog(null, "Error!");
+                                                                               }
+                                                                               HomeGUI homegui = new HomeGUI();
+                                                                               homegui.setVisible(true);
 
-                                                                        String Data = CheckoutGUI.summary;
-                                                                        try {
-                                                                            BufferedWriter reader = new BufferedWriter(new FileWriter(new File("C:\\Users\\t00198396\\Desktop\\OOP\\src\\checkout.txt"), true));
-                                                                            reader.write(Data);
-                                                                            reader.newLine();
-                                                                            reader.close();
-                                                                        } catch (Exception E) {
-                                                                            JOptionPane.showMessageDialog(null,"Error!");
-                                                                        }
-                                                                        HomeGUI homegui = new HomeGUI();
-                                                                        homegui.setVisible(true);
-                                                                    }
+                                                                           } else
+                                                                               JOptionPane.showMessageDialog(null,"You Must Enter A CVV");
+                                                                   }else
+                                                                       JOptionPane.showMessageDialog(null,"Error: You Must Enter An Expiry Date");
+                                                                    }else
+                                                                        JOptionPane.showMessageDialog(null,"Error: You Must Enter A Card Number");
                                                                    }else
                                                                         JOptionPane.showMessageDialog(null, "Error: You Must Enter A Country");
                                                                 } else

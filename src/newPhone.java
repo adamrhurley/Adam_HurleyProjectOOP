@@ -134,7 +134,7 @@ public class newPhone {
     }
 
     public static void createPhone() {
-        newPhone onePlus6 = new newPhone("OnePlus 6\n", "155.7 x 75.4 x 7.8 mm\n", 177, "Optic AMOLED\n",
+        newPhone onePlus6 = new newPhone("OnePlus 6\n", "155.7 x 75.4 x 7.8 mm\n", 177, " Optic AMOLED\n",
                 6.28, "\n1080 x 2280 pixels\n", "Yes\n", "Android 9.0 (Pie)\n",
                 "Qualcomm Snapdragon 845 Octa-core (4x2.8 GHz Kryo 385 Gold & 4x1.7 GHz Kryo 385 Silver)\n", "Yes\n",100);
 

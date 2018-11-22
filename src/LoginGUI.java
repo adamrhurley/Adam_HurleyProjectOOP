@@ -2,18 +2,17 @@ import javax.swing.*;
 import java.awt.event.*;
 import java.awt.*;
 
-public class LoginGUI extends JFrame implements ActionListener{
+public class LoginGUI extends JFrame implements ActionListener {
     JTextField usernameField;
     JPasswordField passwordField;
     JButton LoginButton;
 
-    public LoginGUI()
-    {
+    public LoginGUI() {
         FlowLayout LoginLayout = new FlowLayout();
 
         setLayout(LoginLayout);
 
-        setSize(400,100);
+        setSize(400, 100);
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -42,34 +41,35 @@ public class LoginGUI extends JFrame implements ActionListener{
         this.LoginButton.addActionListener(this);
 
 
-
         setVisible(true);
     }
-        public void actionPerformed(ActionEvent e)
-        {
 
-            if(e.getSource() == usernameField)
-            {
+    public void actionPerformed(ActionEvent e) {
+        if (!usernameField.getText().isEmpty()) {
+            if (!passwordField.getText().isEmpty()) {
 
-                passwordField.requestFocus();
-            }
+                if (e.getSource() == usernameField) {
 
-            if(e.getSource() == passwordField)
-            {
-                setVisible(false);
-                HomeGUI phonegui = new HomeGUI();
-                phonegui.setVisible(true);
+                    passwordField.requestFocus();
+                }
 
-            }
-            if(e.getSource() == LoginButton)
-            {
-                setVisible(false);
-                HomeGUI phonegui = new HomeGUI();
-                phonegui.setVisible(true);
+                if (e.getSource() == passwordField) {
+                    setVisible(false);
+                    HomeGUI phonegui = new HomeGUI();
+                    phonegui.setVisible(true);
 
-
-            }
-
+                }
+                if (e.getSource() == LoginButton) {
+                    setVisible(false);
+                    HomeGUI phonegui = new HomeGUI();
+                    phonegui.setVisible(true);
+                }
+            }else JOptionPane.showMessageDialog(null,"Please enter a password");
+            } else JOptionPane.showMessageDialog(null, "Please enter a user name");
         }
     }
+
+
+
+
 
