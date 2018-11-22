@@ -1,5 +1,4 @@
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedWriter;
@@ -83,32 +82,34 @@ public class CheckoutGUI extends JFrame{
 
        submit_btn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e)
-            {
+            {if(phonetxt != null){
                 String Submit = e.getActionCommand();
-                if(e.getSource() == submit_btn || Submit.equals("Submit"))
-                //setVisible(false);
-                    JOptionPane.showMessageDialog(null,"Order Received");
+                if(e.getSource() == submit_btn || Submit.equals("Submit")) {
 
-                    name =("");
-                    address=("");
+
+                    setVisible(false);
+                    JOptionPane.showMessageDialog(null, "Order Received");
+
+                    name = ("");
+                    address = ("");
 
                     name = nametxt.getText().trim();
                     address = addresstxt.getText().trim();
 
                     summary = ("Customer Details: \n" + name) + ("\n" + address);
 
-                   String Data = CheckoutGUI.summary;
-                   try{
-                       BufferedWriter reader = new BufferedWriter(new FileWriter(new File("C:\\Users\\t00198396\\Desktop\\OOPproject\\src\\checkout.txt"),true));
+                    String Data = CheckoutGUI.summary;
+                    try {
+                        BufferedWriter reader = new BufferedWriter(new FileWriter(new File("C:\\Users\\t00198396\\Desktop\\OOPproject\\src\\checkout.txt"), true));
                         reader.write(Data);
                         reader.newLine();
                         reader.close();
-                   }
-                   catch (IOException E)
-                   {
-                       JOptionPane.showMessageDialog(null,"Error!");
-                   }
-                }
+                    } catch (Exception E) {
+                    }
+                    HomeGUI homegui = new HomeGUI();
+                    homegui.setVisible(true);
+                } }
+            }
 
 
 
