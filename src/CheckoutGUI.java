@@ -81,42 +81,64 @@ public class CheckoutGUI extends JFrame{
 
 
        submit_btn.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e)
-            {if(phonetxt != null){
-                String Submit = e.getActionCommand();
-                if(e.getSource() == submit_btn || Submit.equals("Submit")) {
+                                        public void actionPerformed(ActionEvent e) {
+
+                                           if (!nametxt.getText().isEmpty()) {
+                                               if (!phonetxt.getText().isEmpty()) {
+                                                   if (!addresstxt.getText().isEmpty()) {
+                                                       if (!towncitytxt.getText().isEmpty()) {
+                                                            if (!postcodetxt.getText().isEmpty()) {
+                                                               if (!countrytxt.getText().isEmpty()) {
+                                                                    {
 
 
-                    setVisible(false);
-                    JOptionPane.showMessageDialog(null, "Order Received");
-
-                    name = ("");
-                    address = ("");
-
-                    name = nametxt.getText().trim();
-                    address = addresstxt.getText().trim();
-
-                    summary = ("Customer Details: \n" + name) + ("\n" + address);
-
-                    String Data = CheckoutGUI.summary;
-                    try {
-                        BufferedWriter reader = new BufferedWriter(new FileWriter(new File("C:\\Users\\t00198396\\Desktop\\OOPproject\\src\\checkout.txt"), true));
-                        reader.write(Data);
-                        reader.newLine();
-                        reader.close();
-                    } catch (Exception E) {
-                    }
-                    HomeGUI homegui = new HomeGUI();
-                    homegui.setVisible(true);
-                } }
-            }
+                                                                        String Submit = e.getActionCommand();
+                                                                        if (e.getSource() == submit_btn || Submit.equals("Submit"))
 
 
+                                                                            setVisible(false);
+                                                                        JOptionPane.showMessageDialog(null, "Order Received");
 
-                }
+                                                                        name = ("");
+                                                                        address = ("");
 
-       );  }
-        }
+                                                                        name = nametxt.getText().trim();
+                                                                        address = addresstxt.getText().trim();
+
+                                                                        summary = ("Customer Details: \n" + name) + ("\n" + address);
+
+                                                                        String Data = CheckoutGUI.summary;
+                                                                        try {
+                                                                            BufferedWriter reader = new BufferedWriter(new FileWriter(new File("C:\\Users\\t00198396\\Desktop\\OOP\\src\\checkout.txt"), true));
+                                                                            reader.write(Data);
+                                                                            reader.newLine();
+                                                                            reader.close();
+                                                                        } catch (Exception E) {
+                                                                            JOptionPane.showMessageDialog(null,"Error!");
+                                                                        }
+                                                                        HomeGUI homegui = new HomeGUI();
+                                                                        homegui.setVisible(true);
+                                                                    }
+                                                                   }else
+                                                                        JOptionPane.showMessageDialog(null, "Error: You Must Enter A Country");
+                                                                } else
+                                                                    JOptionPane.showMessageDialog(null, "Error: You Must Enter A Postcode");
+                                                           } else
+                                                                JOptionPane.showMessageDialog(null, "Error: You Must Enter A Town/City");
+                                                        } else
+                                                            JOptionPane.showMessageDialog(null, "Error: You Must Enter A Address");
+                                                    } else
+                                                        JOptionPane.showMessageDialog(null, "Error: You Must Enter A Phone Number");
+                                                } else
+                                                    JOptionPane.showMessageDialog(null, "Error: You Must Enter A Name");
+                                            }
+                                        }
+
+                                );
+                            }
+}
+
+
 
 
 
