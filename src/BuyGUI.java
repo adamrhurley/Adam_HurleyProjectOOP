@@ -87,12 +87,14 @@ public class BuyGUI extends JFrame implements ActionListener {
                 //textArea.setEditable(false);
                 //JScrollPane scrollPane = new JScrollPane(textArea);
                 add(textArea);
+                textArea.setEditable(false);
+                //JScrollPane scrollPane = new JScrollPane(textArea1);
+
+
+
 
                 textArea.append(String.valueOf(np));
-
-
-                //You could do something similar for the other combo-box and then you'd have maybe 2 text-areas filled with information
-                //about the 2 Phone objects for comparison purposes
+                revalidate();
             }
         }
     }
