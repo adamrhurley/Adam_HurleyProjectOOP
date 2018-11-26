@@ -1,10 +1,12 @@
-Customer Details:
+Customer Details: 
 Name: Adam Hurley
-Phone Number: 0871234567
+Phone Number: 0876037241
 Address: Minish
 Town/City: Killarney
 Postcode: V93V4A8
 Country: Ireland
-Card Number: 123456789
+Card Number: 1234567889
 Expiry Date: 12/20
 CVV: 123
+
+

@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedWriter;
@@ -8,7 +9,6 @@ import java.io.IOException;
 
 public class CheckoutGUI extends JFrame{
 
-        JButton submit_btn;
         private String name;
         private String phoneNumber;
         private String address;
@@ -108,89 +108,109 @@ public class CheckoutGUI extends JFrame{
             submit_btn.setBounds(180, 500, 120, 40);
             add(submit_btn);
 
+            JButton open_btn = new JButton("Open File");
+            open_btn.setBounds(320, 500, 120, 40);
+            add(open_btn);
+
             setVisible(true);
 
 
+            submit_btn.addActionListener(new ActionListener() {
+                                             public void actionPerformed(ActionEvent e) {
+
+                                                 if (!nametxt.getText().isEmpty()) {
+                                                     if (!phonetxt.getText().isEmpty()) {
+                                                         if (!addresstxt.getText().isEmpty()) {
+                                                             if (!towncitytxt.getText().isEmpty()) {
+                                                                 if (!postcodetxt.getText().isEmpty()) {
+                                                                     if (!countrytxt.getText().isEmpty()) {
+                                                                         if (!cardNumtxt.getText().isEmpty()) {
+                                                                             if (!expirytxt.getText().isEmpty()) {
+                                                                                 if (!cvvtxt.getText().isEmpty()) {
 
 
-       submit_btn.addActionListener(new ActionListener() {
-                                        public void actionPerformed(ActionEvent e) {
+                                                                                     String Submit = e.getActionCommand();
+                                                                                     if (e.getSource() == submit_btn || Submit.equals("Submit")) {
 
-                                           if (!nametxt.getText().isEmpty()) {
-                                               if (!phonetxt.getText().isEmpty()) {
-                                                   if (!addresstxt.getText().isEmpty()) {
-                                                       if (!towncitytxt.getText().isEmpty()) {
-                                                            if (!postcodetxt.getText().isEmpty()) {
-                                                               if (!countrytxt.getText().isEmpty()) {
-                                                                   if (!cardNumtxt.getText().isEmpty()) {
-                                                                       if (!expirytxt.getText().isEmpty()) {
-                                                                           if (!cvvtxt.getText().isEmpty()) {
+                                                                                         setVisible(false);
+                                                                                         JOptionPane.showMessageDialog(null, "Order Received");
+
+                                                                                         name = ("");
+                                                                                         phoneNumber = ("");
+                                                                                         address = ("");
+                                                                                         towncity = ("");
+                                                                                         postcode = ("");
+                                                                                         country = ("");
+                                                                                         cardNumber = ("");
+                                                                                         expiryDate = ("");
+                                                                                         cvv = ("");
+
+                                                                                         name = nametxt.getText().trim();
+                                                                                         phoneNumber = phonetxt.getText().trim();
+                                                                                         address = addresstxt.getText().trim();
+                                                                                         towncity = towncitytxt.getText().trim();
+                                                                                         postcode = postcodetxt.getText().trim();
+                                                                                         country = countrytxt.getText().trim();
+                                                                                         cardNumber = cardNumtxt.getText().trim();
+                                                                                         expiryDate = expirytxt.getText().trim();
+                                                                                         cvv = cvvtxt.getText().trim();
+                                                                                         summary = "Customer Details: \n" + "Name: " + name + "\n" + "Phone Number: " + phoneNumber + "\n" + "Address: " + address + "\n" + "Town/City: " + towncity + "\n" + "Postcode: " + postcode + "\n" + "Country: " + country + "\n" + "Card Number: " + cardNumber + "\n" + "Expiry Date: " + expiryDate + "\n" + "CVV: " + cvv + "\n\n";
+
+                                                                                         String Data = CheckoutGUI.summary;
+                                                                                         try {
+                                                                                             BufferedWriter reader = new BufferedWriter(new FileWriter(new File("C:\\Users\\Adam\\Desktop\\OOP\\src\\checkout.txt"), true));
+                                                                                             reader.write(Data);
+                                                                                             reader.newLine();
+                                                                                             reader.close();
+                                                                                         } catch (Exception E) {
+                                                                                             JOptionPane.showMessageDialog(null, "Error!");
+                                                                                         }
+                                                                                         HomeGUI homegui = new HomeGUI();
+                                                                                         homegui.setVisible(true);
+
+                                                                                     }
+
+                                                                                 } else
+                                                                                     JOptionPane.showMessageDialog(null, "You Must Enter A CVV");
+                                                                             } else
+                                                                                 JOptionPane.showMessageDialog(null, "Error: You Must Enter An Expiry Date");
+                                                                         } else
+                                                                             JOptionPane.showMessageDialog(null, "Error: You Must Enter A Card Number");
+                                                                     } else
+                                                                         JOptionPane.showMessageDialog(null, "Error: You Must Enter A Country");
+                                                                 } else
+                                                                     JOptionPane.showMessageDialog(null, "Error: You Must Enter A Postcode");
+                                                             } else
+                                                                 JOptionPane.showMessageDialog(null, "Error: You Must Enter A Town/City");
+                                                         } else
+                                                             JOptionPane.showMessageDialog(null, "Error: You Must Enter A Address");
+                                                     } else
+                                                         JOptionPane.showMessageDialog(null, "Error: You Must Enter A Phone Number");
+                                                 } else
+                                                     JOptionPane.showMessageDialog(null, "Error: You Must Enter A Name");
+                                             }
+                                         }
 
 
-                                                                               String Submit = e.getActionCommand();
-                                                                               if (e.getSource() == submit_btn || Submit.equals("Submit"))
+            );
+            open_btn.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                    if (e.getSource() == open_btn) {
+                        JFileChooser chooser = new JFileChooser("C:\\Users\\Adam\\Desktop\\OOP\\src\\checkout.txt");
+                        int x = chooser.showOpenDialog(null);
+                        if (x == JFileChooser.APPROVE_OPTION) {
+                            File file = chooser.getSelectedFile();
+                            try {
+                                Desktop.getDesktop().open(file);
+                            } catch (IOException EE) {
+                                JOptionPane.showMessageDialog(null,"ERROR!");
 
-
-                                                                                   setVisible(false);
-                                                                               JOptionPane.showMessageDialog(null, "Order Received");
-
-                                                                               name = ("");
-                                                                               phoneNumber = ("");
-                                                                               address = ("");
-                                                                               towncity = ("");
-                                                                               postcode = ("");
-                                                                               country = ("");
-                                                                               cardNumber = ("");
-                                                                               expiryDate = ("");
-                                                                               cvv = ("");
-
-                                                                               name = nametxt.getText().trim();
-                                                                               phoneNumber = phonetxt.getText().trim();
-                                                                               address = addresstxt.getText().trim();
-                                                                               towncity = towncitytxt.getText().trim();
-                                                                               postcode = postcodetxt.getText().trim();
-                                                                               country = countrytxt.getText().trim();
-                                                                               cardNumber = cardNumtxt.getText().trim();
-                                                                               expiryDate = expirytxt.getText().trim();
-                                                                               cvv = cvvtxt.getText().trim();
-                                                                               summary = "Customer Details: \n" + "Name: " +  name + "\n" + "Phone Number: " + phoneNumber + "\n" + "Address: " + address + "\n" + "Town/City: " + towncity + "\n" + "Postcode: " + postcode + "\n" + "Country: " + country + "\n" + "Card Number: " + cardNumber + "\n" + "Expiry Date: " + expiryDate + "\n" + "CVV: " + cvv ;
-
-                                                                               String Data = CheckoutGUI.summary;
-                                                                               try {
-                                                                                   BufferedWriter reader = new BufferedWriter(new FileWriter(new File("C:\\Users\\t00198396\\Desktop\\OOP\\src\\checkout.txt"), true));
-                                                                                   reader.write(Data);
-                                                                                   reader.newLine();
-                                                                                   reader.close();
-                                                                               } catch (Exception E) {
-                                                                                   JOptionPane.showMessageDialog(null, "Error!");
-                                                                               }
-                                                                               HomeGUI homegui = new HomeGUI();
-                                                                               homegui.setVisible(true);
-
-                                                                           } else
-                                                                               JOptionPane.showMessageDialog(null,"You Must Enter A CVV");
-                                                                   }else
-                                                                       JOptionPane.showMessageDialog(null,"Error: You Must Enter An Expiry Date");
-                                                                    }else
-                                                                        JOptionPane.showMessageDialog(null,"Error: You Must Enter A Card Number");
-                                                                   }else
-                                                                        JOptionPane.showMessageDialog(null, "Error: You Must Enter A Country");
-                                                                } else
-                                                                    JOptionPane.showMessageDialog(null, "Error: You Must Enter A Postcode");
-                                                           } else
-                                                                JOptionPane.showMessageDialog(null, "Error: You Must Enter A Town/City");
-                                                        } else
-                                                            JOptionPane.showMessageDialog(null, "Error: You Must Enter A Address");
-                                                    } else
-                                                        JOptionPane.showMessageDialog(null, "Error: You Must Enter A Phone Number");
-                                                } else
-                                                    JOptionPane.showMessageDialog(null, "Error: You Must Enter A Name");
-                                            }
-                                        }
-
-                                );
                             }
-}
+                        }
+                    }
+                }
+            });
+        }}
 
 
 
