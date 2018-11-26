@@ -104,7 +104,7 @@ public class oldPhone extends newPhone{
     public String toString() {
         return  "Name: " + name +
                 "\nDimensions: " + dimensions +
-                "\nWeight: " + weight +
+                "\nWeight: " + weight + "g" +
                 "\nDisplay Type: " + displayType +
                 "\nDisplay Size: " + displaySize +
                 "\nResolution: " + Resolution +
@@ -112,7 +112,7 @@ public class oldPhone extends newPhone{
                 "\nOperating System:" + os +
                 "\nCPU: " + cpu +
                 "\nFingerprint: " + fingerprint +
-                "\nCost: " + cost +
+                "\nCost: €" + cost +
                 "\nKeyboard Type: " + keyboardType +
                 "\nFlip: " + flip;
 }

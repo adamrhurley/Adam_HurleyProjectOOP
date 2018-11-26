@@ -10,3 +10,15 @@ Expiry Date: 12/20
 CVV: 123
 
 
+Customer Details: 
+Name: aa
+Phone Number: a
+Address: a
+Town/City: a
+Postcode: a
+Country: a
+Card Number: a
+Expiry Date: a
+CVV: a
+
+

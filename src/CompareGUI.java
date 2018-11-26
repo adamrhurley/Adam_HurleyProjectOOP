@@ -43,9 +43,8 @@ public class CompareGUI extends JFrame implements ActionListener {
 
         add(p,BorderLayout.NORTH);
 
-        //p2.setPreferredSize(new Dimension(300,200));
-
         p2.add(scrollPane);
+
         p2.add(scrollPane1);
 
         add(p2,BorderLayout.CENTER);
@@ -71,13 +70,13 @@ public class CompareGUI extends JFrame implements ActionListener {
         setVisible(true);
 
         home_btn.addActionListener(new ActionListener() {
-                                       public void actionPerformed(ActionEvent e)
-                                       {
-                                           setVisible(false);
-                                           HomeGUI homegui = new HomeGUI();
-                                           homegui.setVisible(true);
-                                       }
-                                   }
+            public void actionPerformed(ActionEvent e)
+            {
+                setVisible(false);
+                HomeGUI homegui = new HomeGUI();
+                homegui.setVisible(true);
+            }
+        }
         );
     }
 
@@ -92,7 +91,6 @@ public class CompareGUI extends JFrame implements ActionListener {
          *this newPhone object to the console for test purposes*/
 
         int indexSelected = itemList.getSelectedIndex();
-        System.out.println(indexSelected);
         newPhone.createPhone();
         ArrayList<newPhone> allPhones = newPhone.getAllPhones();
 

@@ -37,9 +37,10 @@ public class LoginGUI extends JFrame implements ActionListener {
         add(LoginButton);
 
         this.usernameField.addActionListener(this);
-        this.passwordField.addActionListener(this);
-        this.LoginButton.addActionListener(this);
 
+        this.passwordField.addActionListener(this);
+
+        this.LoginButton.addActionListener(this);
 
         setVisible(true);
     }

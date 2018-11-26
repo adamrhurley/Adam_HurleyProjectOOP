@@ -23,7 +23,7 @@ public class CheckoutGUI extends JFrame{
         static String summary;
         JTextField nametxt = new JTextField();
         JTextField addresstxt = new JTextField();
-    //https://www.youtube.com/watch?v=a0JktV-EJBk
+
         public CheckoutGUI() {
             setLayout(null);
             setVisible(true);
@@ -35,7 +35,6 @@ public class CheckoutGUI extends JFrame{
             JLabel namelbl = new JLabel("Name : ");
             namelbl.setBounds(50, 50, 100, 30);
             add(namelbl);
-
 
             nametxt.setBounds(180, 50, 180, 30);
             add(nametxt);
@@ -51,7 +50,6 @@ public class CheckoutGUI extends JFrame{
             JLabel addresslbl = new JLabel("Address : ");
             addresslbl.setBounds(50, 150, 100, 30);
             add(addresslbl);
-
 
             addresstxt.setBounds(180, 150, 180, 30);
             add(addresstxt);
@@ -156,7 +154,7 @@ public class CheckoutGUI extends JFrame{
                                                                                          cvv = cvvtxt.getText().trim();
                                                                                          summary = "Customer Details: \n" + "Name: " + name + "\n" + "Phone Number: " + phoneNumber + "\n" + "Address: " + address + "\n" + "Town/City: " + towncity + "\n" + "Postcode: " + postcode + "\n" + "Country: " + country + "\n" + "Card Number: " + cardNumber + "\n" + "Expiry Date: " + expiryDate + "\n" + "CVV: " + cvv + "\n\n";
 
-                                                                                         String Data = CheckoutGUI.summary;
+                                                                                         String Data = CheckoutGUI.summary; //https://www.youtube.com/watch?v=a0JktV-EJBk
                                                                                          try {
                                                                                              BufferedWriter reader = new BufferedWriter(new FileWriter(new File("C:\\Users\\Adam\\Desktop\\OOP\\src\\checkout.txt"), true));
                                                                                              reader.write(Data);
@@ -199,18 +197,19 @@ public class CheckoutGUI extends JFrame{
                         JFileChooser chooser = new JFileChooser("C:\\Users\\Adam\\Desktop\\OOP\\src\\checkout.txt");
                         int x = chooser.showOpenDialog(null);
                         if (x == JFileChooser.APPROVE_OPTION) {
-                            File file = chooser.getSelectedFile();
+                            File file = chooser.getSelectedFile(); //https://www.youtube.com/watch?v=a0JktV-EJBk
                             try {
                                 Desktop.getDesktop().open(file);
                             } catch (IOException EE) {
-                                JOptionPane.showMessageDialog(null,"ERROR!");
+                                JOptionPane.showMessageDialog(null,"ERROR! File not found!");
 
                             }
                         }
                     }
                 }
             });
-        }}
+        }
+}
 
 
 

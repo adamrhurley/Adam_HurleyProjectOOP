@@ -7,8 +7,8 @@ import java.util.ArrayList;
 public class BuyGUI extends JFrame implements ActionListener {
     JPanel p = new JPanel();
     JPanel p2 = new JPanel();
-    JTextArea textArea = new JTextArea(20,50); //added by JB as global instances to ensure they can just continually be rewritten on
-    JScrollPane scrollPane = new JScrollPane(textArea); //code moved by JB to make global for similar reasons to above
+    JTextArea textArea = new JTextArea(20,50);
+    JScrollPane scrollPane = new JScrollPane(textArea);
     String[] itemString = {"OnePlus 6","Samsung Galaxy Note 9","Huawei Mate 20 Pro","iPhone XS Max", "Google Pixel 3 XL","Nokia 3310"};
     JComboBox itemList = new JComboBox(itemString);   //https://www.youtube.com/watch?v=iOV_oaJhABQ
 
@@ -52,19 +52,21 @@ public class BuyGUI extends JFrame implements ActionListener {
             home_btn.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e)
                 {
-
                     setVisible(false);
                     HomeGUI homegui = new HomeGUI();
                     homegui.setVisible(true);
                 }
-            });
+            }
+            );
 
             buyButton.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     setVisible(false);
                     CheckoutGUI checkoutgui = new CheckoutGUI();
                     checkoutgui.setVisible(true);
-                }});
+                }
+            }
+            );
         }
         public void actionPerformed(ActionEvent e)
         {
@@ -81,7 +83,7 @@ public class BuyGUI extends JFrame implements ActionListener {
 
                 textArea.setText(String.valueOf(np));
 
-                revalidate();
+                revalidate();//JB
             }
         }
     }

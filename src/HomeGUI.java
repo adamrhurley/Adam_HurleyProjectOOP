@@ -3,13 +3,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class HomeGUI extends JFrame {//implements ActionListener {
-
-    JButton buyButton;
-    JButton searchButton;
-    JButton compareButton;
-
-
+public class HomeGUI extends JFrame {
     public HomeGUI() {
         FlowLayout HomeLayout = new FlowLayout();
 
@@ -23,14 +17,11 @@ public class HomeGUI extends JFrame {//implements ActionListener {
 
         add(buyButton);
 
-
-
         JButton compareButton = new JButton("Compare");
 
         add(compareButton);
 
         setVisible(true);
-
 
         buyButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {

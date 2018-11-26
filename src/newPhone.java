@@ -122,41 +122,41 @@ public class newPhone {
         return
                 "Name: " + name +
                 "\nDimensions: " + dimensions +
-                "\nWeight: " + weight +
+                "\nWeight: " + weight + "g" +
                 "\nDisplay Type: " + displayType +
-                "\nDisplay Size: " + displaySize +
+                "\nDisplay Size: " + displaySize + "''" +
                 "\nResolution: " + Resolution +
                 "\nMultitouch: " + multitouch +
                 "\nOperating System:" + os +
                 "\nCPU: " + cpu +
                 "\nFingerprint: " + fingerprint +
-                "\nCost: " + cost;
+                "\nCost: €" + cost;
     }
 
     public static void createPhone() {
-        newPhone onePlus6 = new newPhone("OnePlus 6\n", "155.7 x 75.4 x 7.8 mm\n", 177, " Optic AMOLED\n",
-                6.28, "\n1080 x 2280 pixels\n", "Yes\n", "Android 9.0 (Pie)\n",
-                "Qualcomm Snapdragon 845 Octa-core (4x2.8 GHz Kryo 385 Gold & 4x1.7 GHz Kryo 385 Silver)\n", "Yes\n",100);
+        newPhone onePlus6 = new newPhone("OnePlus 6\n", "155.7 x 75.4 x 7.8 mm\n", 177, "Optic AMOLED\n",
+                6.28, "1080 x 2280 pixels\n", "Yes\n", "Android 9.0 (Pie)\n",
+                "Qualcomm Snapdragon 845 Octa-core (4x2.8 GHz Kryo 385 Gold & 4x1.7 GHz Kryo 385 Silver)\n", "Yes\n",580);
 
-        newPhone galaxyNote9 = new newPhone("Samsung Galaxy Note 9\n", "161.9 x 76.4 x 8.8 mm", 201,
-                "Super AMOLED", 6.4, "1440 x 2960 pixels", "Yes", "Android 8.1 (Oreo)",
-                "Qualcomm Snapdragon 845 Octa-core (4x2.8 GHz Kryo 385 Gold & 4x1.7 GHz Kryo 385 Silver)", "Yes", 100);
+        newPhone galaxyNote9 = new newPhone("Samsung Galaxy Note 9\n", "161.9 x 76.4 x 8.8 mm\n", 201,
+                "Super AMOLED\n", 6.4, "1440 x 2960 pixels\n", "Yes\n", "Android 8.1 (Oreo)\n",
+                "Qualcomm Snapdragon 845 Octa-core (4x2.8 GHz Kryo 385 Gold & 4x1.7 GHz Kryo 385 Silver)\n", "Yes\n", 980);
 
-        newPhone mate20pro = new newPhone("Huawei Mate 20 Pro", "157.8 x 72.3 x 8.6 mm", 201,
-                "Super AMOLED", 6.4, "1440 x 2960 pixels", "Yes", "Android 8.1 (Oreo)",
-                "Qualcomm Snapdragon 845 Octa-core (4x2.8 GHz Kryo 385 Gold & 4x1.7 GHz Kryo 385 Silver)", "Yes",100);
+        newPhone mate20pro = new newPhone("Huawei Mate 20 Pro\n", "157.8 x 72.3 x 8.6 mm\n", 201,
+                "Super AMOLED\n", 6.4, "1440 x 2960 pixels\n", "Yes\n", "Android 8.1 (Oreo)\n",
+                "Qualcomm Snapdragon 845 Octa-core (4x2.8 GHz Kryo 385 Gold & 4x1.7 GHz Kryo 385 Silver)\n", "Yes\n",790);
 
-        newPhone iphonexsmax = new newPhone("Apple iPhone XS Max", "157.5 x 77.4 x 7.7 mm", 208,
-                "Super AMOLED", 6.5, "1242 x 2688 pixels", "Yes", "iOS 12.1",
-                "Apple A12 Bionic Hexa-core (2x2.5 GHz Vortex + 4x1.6 GHz Tempest)", "No (FaceID",100);
+        newPhone iphonexsmax = new newPhone("Apple iPhone XS Max\n", "157.5 x 77.4 x 7.7 mm\n", 208,
+                "Super AMOLED\n", 6.5, "1242 x 2688 pixels\n", "Yes\n", "iOS 12.1\n",
+                "Apple A12 Bionic Hexa-core (2x2.5 GHz Vortex + 4x1.6 GHz Tempest)\n", "No (FaceID)\n",1200);
 
-        newPhone pixel3xl = new newPhone("Google Pixel 3 XL", "158 x 76.7 x 7.9 mm", 184,
-                "P-OLED", 6.3, "1440 x 2960 pixels", "Yes", "Android 9.0 (Pie)",
-                "Qualcomm Snapdragon 845 Octa-core (4x2.8 GHz Kryo 385 Gold & 4x1.7 GHz Kryo 385 Silver)", "Yes",100);
+        newPhone pixel3xl = new newPhone("Google Pixel 3 XL\n", "158 x 76.7 x 7.9 mm\n", 184,
+                "P-OLED\n", 6.3, "1440 x 2960 pixels\n", "Yes\n", "Android 9.0 (Pie)\n",
+                "Qualcomm Snapdragon 845 Octa-core (4x2.8 GHz Kryo 385 Gold & 4x1.7 GHz Kryo 385 Silver)\n", "Yes\n",850);
 
-        newPhone nokia3310 = new oldPhone("Google Pixel 3 XL", "158 x 76.7 x 7.9 mm", 184,
-                "P-OLED", 6.3, "1440 x 2960 pixels", "Yes", "Android 9.0 (Pie)",
-                "Qualcomm Snapdragon 845 Octa-core (4x2.8 GHz Kryo 385 Gold & 4x1.7 GHz Kryo 385 Silver)", "Yes",100,"T9","No");
+        newPhone nokia3310 = new oldPhone("Nokia 3310\n", "113 x 48 x 22mm\n", 133,
+                "Monochrome\n", 1.5, "84x48\n", "No\n", "Series 20\n",
+                "MAD2WD1\n", "No\n",75,"T9\n","No\n");
 
 
         allPhones = new ArrayList<newPhone>();
