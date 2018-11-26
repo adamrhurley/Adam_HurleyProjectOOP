@@ -156,7 +156,7 @@ public class CheckoutGUI extends JFrame{
 
                                                                                          String Data = CheckoutGUI.summary; //https://www.youtube.com/watch?v=a0JktV-EJBk
                                                                                          try {
-                                                                                             BufferedWriter reader = new BufferedWriter(new FileWriter(new File("C:\\Users\\Adam\\Desktop\\OOP\\src\\checkout.txt"), true));
+                                                                                             BufferedWriter reader = new BufferedWriter(new FileWriter(new File("F:\\OOP PROJECT\\OOP\\src\\checkout.txt"), true));
                                                                                              reader.write(Data);
                                                                                              reader.newLine();
                                                                                              reader.close();
@@ -194,7 +194,7 @@ public class CheckoutGUI extends JFrame{
             open_btn.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     if (e.getSource() == open_btn) {
-                        JFileChooser chooser = new JFileChooser("C:\\Users\\Adam\\Desktop\\OOP\\src\\checkout.txt");
+                        JFileChooser chooser = new JFileChooser("F:\\OOP PROJECT\\OOP\\src\\checkout.txt");
                         int x = chooser.showOpenDialog(null);
                         if (x == JFileChooser.APPROVE_OPTION) {
                             File file = chooser.getSelectedFile(); //https://www.youtube.com/watch?v=a0JktV-EJBk
