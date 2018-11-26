@@ -94,7 +94,6 @@ public class CompareGUI extends JFrame implements ActionListener {
         newPhone.createPhone();
         ArrayList<newPhone> allPhones = newPhone.getAllPhones();
 
-
         newPhone np = allPhones.get(indexSelected);
 
         //small modifications by JB here to ensure multiple text-areas are not created and added to GUI

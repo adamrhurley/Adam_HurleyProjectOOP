@@ -73,7 +73,6 @@ public class BuyGUI extends JFrame implements ActionListener {
             if(e.getSource() == itemList)
             {
                 int indexSelected = itemList.getSelectedIndex();
-                System.out.println(indexSelected);
                 newPhone.createPhone();
                 ArrayList<newPhone> allPhones = newPhone.getAllPhones();
 
